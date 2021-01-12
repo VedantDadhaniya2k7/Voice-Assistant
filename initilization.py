@@ -116,21 +116,22 @@ EXCEL_KEYWORDS = [
 
 
 def main():
-    User_input = get_audio()
-    for word in EXCEL_KEYWORDS :
-        if word in str(User_input).lower():
-            Open_App("Excel")
-    for word in WORD_FILE_KEYWORDS :
-        if word in str(User_input).lower():
-            Open_App("Word")
-    for word in NOTEPAD_KEYWORDS :
-        if word in str(User_input).lower():
-            Open_App("Notepad")
-    for word in GOOGLE_KEYWORDS :
-        if word in str(User_input).lower():
-            Open_App("Google")
+    run  = True
+    while run:
+        User_input = get_audio()
+        for word in EXCEL_KEYWORDS :
+            if word in str(User_input).lower():
+                Open_App("Excel")
+        for word in WORD_FILE_KEYWORDS :
+            if word in str(User_input).lower():
+                Open_App("Word")
+        for word in NOTEPAD_KEYWORDS :
+            if word in str(User_input).lower():
+                Open_App("Notepad")
+        for word in GOOGLE_KEYWORDS :
+            if word in str(User_input).lower():
+                Open_App("Google")
 
-    if "close" in str(User_input).lower() or "stop" in str(User_input).lower():
-        global run
-        run = False
+        if "close" in str(User_input).lower() or "stop" in str(User_input).lower():
+            run = False
 
